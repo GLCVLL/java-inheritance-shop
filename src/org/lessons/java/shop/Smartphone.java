@@ -34,8 +34,8 @@ public class Smartphone extends Prodotto {
 		@Override
 		public String toString() {
 			return super.toString()
-					+ "imei= " + imeiCode 
-					+ "memory= " + memory;
+					+ ", imei= " + imeiCode 
+					+ ", memory= " + memory;
 		}
 	    
 	    

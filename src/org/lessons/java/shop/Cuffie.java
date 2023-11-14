@@ -34,8 +34,8 @@ public class Cuffie extends Prodotto {
 	@Override
 	public String toString() {
 		return super.toString()
-				+ "colore= " + color
-				+ "wireless o cablate= " + Wireless;
+				+ ", colore= " + color
+				+ ", wireless= " + Wireless;
 	}
 
 

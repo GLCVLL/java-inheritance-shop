@@ -34,8 +34,8 @@ public class Televisore extends Prodotto {
 	@Override
 	public String toString() {
 		return super.toString()
-				+ "size= " + size
-				+ "smart= " + smart;
+				+ ", size= " + size
+				+ ", smart= " + smart;
 	}
 	
 	

@@ -93,14 +93,41 @@ public class Prodotto {
         }
     }
     
+    // METODO PER IL CALCOLO DELLO SCONTO CON TESSERA
+    
+    public double generatedPriceOff(boolean card) {
+        double discount = 0.02; 
+
+        if (card) {
+            if (this instanceof Smartphone) {
+                Smartphone smartphone = (Smartphone) this;
+                if (smartphone.getMemory() < 32) {
+                    return getTotalPrice() * (1 - 0.05); 
+                }
+            } else if (this instanceof Televisore) {
+                Televisore televisore = (Televisore) this;
+                if (!televisore.isSmart()) {
+                    return getTotalPrice() * (1 - 0.1);
+                }
+            } else if (this instanceof Cuffie) {
+                Cuffie cuffie = (Cuffie) this;
+                if (!cuffie.Wireless()) {
+                    return getTotalPrice() * (1 - 0.07); 
+                }
+            }
+        }
+
+        return getTotalPrice() * (1 - discount); 
+    }
+    
     @Override
     public String toString() {
         return "Prodotto: " +
-                "Name= " + getExtendedName() +
-                ", text= " + text +
-                ", price no Vat= " + getBasePrice() +
-                ", price with Vat= " + getTotalPrice() +
-                ", vat= " + vat ;
+                "Name= " + getExtendedName() + "/n" +
+        		", text= " + text + "/n" +
+                ", price no Vat= " + getBasePrice() + "/n" + 
+        		", price with Vat= " + getTotalPrice() + "/n" + 
+                ", vat= " + vat + "/n"  ;
     }
 }
 

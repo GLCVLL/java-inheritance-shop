@@ -5,7 +5,16 @@ import java.util.Scanner;
 
 public class Carrello {
     public static void main(String[] args) {
+    	
+    	
         Scanner in = new Scanner(System.in);
+        
+        // TESSERA FEDELTà
+        System.out.println("Possiedi una tessera fedeltà? (sì/no): ");
+    	String answerCard = in.nextLine();
+    	boolean card = answerCard.equals("sì");
+    	
+    	
         Prodotto[] carrello = new Prodotto[10];
         int productsNumber = 0;
 
@@ -36,6 +45,11 @@ public class Carrello {
                 }
                 
                productsNumber++;
+               
+               if (carrello[x] != null) {
+                   double priceOff = carrello[x].generatedPriceOff(card);
+                   System.out.println("Prezzo scontato: " + priceOff);
+               }
             }
         }
     }
